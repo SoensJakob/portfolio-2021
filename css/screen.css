@@ -1,0 +1,1114 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('../assets/fonts/RobotoMono-VariableFont_wght.ttf');
+}
+
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* typography */
+  --global-root-font-size: 16;
+
+  /* colors */
+  --global-color-alpha-x-light: #E1F6E3;
+  --global-color-alpha-light: #BCEEC1;
+  --global-color-alpha: #6DD177;
+  
+
+  --global-color-neutral-light: #ffffff;
+  --global-color-neutral-x-light: #F8F8F8;
+  --global-color-neutral: #c6cacc;
+  --global-color-neutral-dark: #a9aaaa;
+  --global-color-neutral-x-dark: #3B3B3B;
+  --global-color-neutral-xx-dark: #1a1c1d;
+  --global-color-neutral-xxx-dark: #000;
+
+  /* global page settings */
+  --global-selection-backgroundColor: var(--global-color-alpha-light);
+  --global-selection-color:var(--global-color-neutral-xx-dark);
+
+  /* Baseline settings */
+  --global-baseline: calc(1rem / 4); /* 3.5px */
+
+  --global-whitespace-xxs: var(--global-baseline); /* = 3.5px */
+  --global-whitespace-xs: calc(var(--global-baseline)  * 2); /*  = 7px */
+  --global-whitespace-sm: calc(var(--global-baseline)  * 3); /*  = 10.5px */
+  --global-whitespace-md: calc(var(--global-baseline)  * 4); /*  = 14px */
+  --global-whitespace-lg: calc(var(--global-baseline)  * 6); /*  = 21px */
+  --global-whitespace-xl: calc(var(--global-baseline)  * 8); /*  = 28px */
+  --global-whitespace-xxl: calc(var(--global-baseline)  * 12); /*  = 42px */
+  --global-whitespace-xxxl: calc(var(--global-baseline)  * 18); /*  = 63px */
+
+  /* Shadows */
+  --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
+  --global-box-shadow-lg: 0 0 0 1px rgba(0,0,0,.025), 0 2px 10px rgba(0,0,0,.1);
+  
+
+  /* transitions */
+  --global-transition-alpha: .2s;
+	--global-transition-beta: 1s;
+
+  /* radius */
+  --global-borderRadius: calc(4rem / var(--global-root-font-size));
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 87.5%;
+  line-height: 1.5;
+  font-family:'RobotoMono', sans-serif;
+  font-weight: 400;
+  color: var(--global-color-neutral-xx-dark);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: var(--global-selection-backgroundColor);
+  color: var(--global-selection-color);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--global-selection-backgroundColor);
+  color: var(--global-selection-color);;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: calc(var(--global-baseline) * 12);
+  margin: 0 0 var(--global-whitespace-xxl);
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: calc(var(--global-baseline) * 10);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: calc(var(--global-baseline) * 8);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: calc(var(--global-baseline) * 6);
+  margin: 0 0 var(--global-whitespace-md);
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 var(--global-whitespace-xl);
+}
+
+ul,
+ol {
+  padding-left: var(--global-whitespace-lg);
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 1.4375rem;
+  line-height: calc(var(--global-baseline) * 8);
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: calc(var(--global-baseline) * 4);
+  margin-top: var(--global-whitespace-xs);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 var(--global-whitespace-lg);
+}
+
+a {
+  transition: color var(--global-transition-alpha) ease-out;
+  color: var(--global-color-neutral-xx-dark);
+  /* outline-color: var(--global-color-alpha); */
+  outline-width: medium;
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+a:visited,
+a:active {
+  color: var(--global-color-neutral-xx-dark);
+}
+
+a:hover,
+a:focus {
+  color: var(--global-color-alpha);
+}
+
+label,
+input {
+  display: inline-block;
+}
+
+select {
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--global-color-neutral-x-dark);
+}
+
+input:disabled {
+  cursor: not-allowed;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  position: relative;
+  padding: var(--global-whitespace-lg) var(--global-whitespace-lg) 0;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+  padding-top: var(--global-whitespace-xxl);
+  padding-bottom: var(--global-whitespace-lg);
+}
+
+.o-row--xl {
+  padding-top: var(--global-whitespace-xxxl);
+  padding-bottom: var(--global-whitespace-xxl);
+}
+
+@media (min-width: 48rem) {
+  .o-row {
+    padding-left: var(--global-whitespace-xxl);
+    padding-right: var(--global-whitespace-xxl);
+  }
+}
+
+@media (min-width: 62rem) {
+  .o-row--xl {
+    padding-top: calc(var(--global-whitespace-xxl) * 2);
+    padding-bottom: var(--global-whitespace-xxxl);
+  }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  display: grid;
+
+  align-content: center;
+  padding: var(--global-whitespace-xxl) var(--global-whitespace-xxxl);
+  width: 100%;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  position: relative;
+}
+
+.o-section + .o-section {
+  padding-top: var(--global-whitespace-xs);
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-app {
+
+}
+
+.c-app__topbar {
+  width: 100%;
+  top: 0;
+  transition: top var(--global-transition-alpha), box-shadow var(--global-transition-beta);
+  
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--global-color-neutral-light);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 70%, rgba(255,255,255,0.9) 100%); 
+  padding:  var(--global-whitespace-md) var(--global-whitespace-xxxl);
+  z-index: 100;
+}
+
+
+.c-app__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.c-app__about {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.c-app__experience {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.c-app__projects {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.c-app__contact {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/*
+    Component: nav
+*/
+.c-nav {
+
+}
+
+.c-nav__logo {
+
+}
+
+.c-nav__list {
+  display: flex;
+  margin: 0;
+}
+
+.c-nav__item {
+  
+}
+
+.c-nav__item:not(:first-child)::before {
+  content: '/';
+}
+
+.c-nav__link {
+  margin: 0 var(--global-whitespace-lg);
+  color:var(--global-color-neutral-xx-dark);
+  text-decoration: none;
+
+}
+
+/*
+    Component: button
+*/
+
+.c-button {
+  border:1px solid var(--global-color-alpha);
+  padding: var(--global-whitespace-xxs) var(--global-whitespace-lg);
+  border-radius: var(--global-borderRadius);
+  background-color: var(--global-color-alpha-x-light);
+  box-shadow: var(--global-box-shadow);
+  transition: background-color var(--global-transition-alpha);
+  cursor: pointer;
+}
+.c-button--lg {
+  font-size: 1.3rem;
+  padding: var(--global-whitespace-xs) var(--global-whitespace-xxl);
+}
+
+.c-button:hover, 
+.c-button:focus {
+  background-color: var(--global-color-alpha-light);
+  color:var(--global-color-neutral-xx-dark);
+}
+
+/*
+    Component: Header
+*/
+
+.c-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.c-header__text {
+  padding:   0 0 var(--global-whitespace-xxl) var(--global-whitespace-xxl) ;
+}
+
+.c-header__subtitle {
+  color:var(--global-color-neutral-x-dark);
+  font-weight: 400;
+  margin: 0 0 var(--global-whitespace-xxl);;
+}
+
+.c-header__button {
+  text-decoration: none;
+  font-size: 1.25em;
+  box-shadow: var(--global-box-shadow-lg);
+}
+
+
+.c-about {
+  width: 100%;
+}
+
+
+
+/*
+    Component: title in content
+*/
+
+.c-title {
+  display: flex;
+  align-items: center;
+
+  margin: 0 0 var(--global-whitespace-xl) 0;
+}
+
+.c-title__text {
+  margin: 0;
+}
+
+/*
+    Component: line
+*/
+
+.c-line {
+  margin: var(--global-whitespace-xs) var(--global-whitespace-sm) 0 var(--global-whitespace-sm);
+  height: 1px;
+  background-color: black;
+}
+
+.c-line--sm {
+  width: 20px;
+}
+
+.c-line--md {
+  width: 90px;
+}
+
+.c-line--lg {
+  width: 180px;
+}
+
+/*
+    Component: content
+*/
+
+.c-content {
+  width: 100%;
+  display: flex;
+  align-items: start;
+}
+
+.c-content__image {
+  height: 100%;
+  width: 100%;
+  margin: 0 var(--global-whitespace-md);
+}
+
+/*
+    Component: SKILLS
+*/
+
+.c-skills {
+  display: flex;
+  
+}
+
+.c-skills__title {
+  margin-left:calc(var(--global-whitespace-xl) + var(--global-baseline));
+}
+
+.c-skills__list {
+  margin:0 var(--global-whitespace-xxl) var(--global-whitespace-lg) 0;
+}
+
+.c-skills__item {
+  margin:var(--global-whitespace-xs) 0;
+}
+
+.c-skills__languages .c-skills__list .c-skills__item {
+  padding-left: var(--global-whitespace-sm);
+}
+
+/*
+    Component: software
+*/
+
+.c-software {
+
+}
+
+.c-software__skills {
+  margin-left: calc(var(--global-whitespace-xl) + var(--global-baseline));
+}
+
+/*
+    Component: fixed content socials
+*/
+
+.c-socials {
+  position: fixed;
+  bottom: 0;
+  left: var(--global-whitespace-xxl);
+}
+
+.c-socials__link {
+  display: block;
+  margin:var(--global-whitespace-md);
+  transition: top var(--global-transition-alpha);
+  --socials-color:var(--global-color-neutral-xxx-dark);
+  position: relative;
+  top: 0;
+}
+
+.c-socials__link:hover {
+  --socials-color:var(--global-color-alpha);
+  top:-2px;
+}
+
+.c-socials__line {
+  width: 1px;
+  background-color: black;
+  height: 90px;
+  margin:0 auto;
+}
+
+.c-socials__svg {
+  transition: fill var(--global-transition-alpha);
+  fill: var(--socials-color);
+}
+
+
+/*
+    Component: next button
+*/
+
+.c-next {
+  position: fixed;
+  cursor: pointer;
+  display: flex;
+  margin-top:calc(var(--global-whitespace-xxl) );
+  justify-content: center;
+  bottom: 1%;
+  left: 50%;
+  margin:0 auto;
+  transition: all var(--global-transition-beta);
+  z-index: 100;
+  
+}
+.c-next__svg {
+  width: 48px;
+  height: 48px;
+}
+
+/*
+    Component: fixed content email
+*/
+
+.c-email {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 40px;
+  right:0;
+}
+
+.c-email__link {  
+  position: relative;
+  text-decoration: none;
+  right: 0;
+  transition: right var(--global-transition-alpha), color var(--global-transition-alpha);
+}
+.c-email__link:hover {
+  right:2px;
+}
+
+
+.c-email__line {
+  margin: var(--global-whitespace-xxs) 0 0 var(--global-whitespace-sm);
+  background-color: var(--global-color-neutral-xxx-dark);
+}
+
+/*
+    Component: experience
+*/
+
+.c-experience {
+  width: 100%;
+}
+
+.c-experience__content {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  justify-items: flex-end;
+  
+}
+
+.c-experience__row {
+  display: flex;
+}
+
+.c-experience__title {
+
+}
+
+.c-experience__date {
+  margin: 0 var(--global-whitespace-xl);
+  padding:var(--global-whitespace-xxs) var(--global-whitespace-md) 0 0 ;
+  border-right: 2px solid var(--global-color-alpha-light);  
+
+}
+
+.c-experience__date:first-child {
+  height: var(--global-whitespace-xxl);
+  border-image: linear-gradient(to top, var(--global-color-alpha-light), rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.c-experience__date p {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.c-experience__job {
+  border-bottom: 1px solid var(--global-color-neutral-dark);
+  margin-bottom: var(--global-whitespace-lg);
+}
+
+.c-experience__job:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+
+/*
+    Component: projects
+*/
+
+.c-projects {
+  width: 100%;
+}
+
+.c-projects__content {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  column-gap: var(--global-whitespace-xl);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--global-whitespace-xxl) 0;
+}
+
+.c-project__content--inverse {
+  grid-template-columns: 60% 40%;
+}
+
+.c-projects__image {
+  box-shadow: var(--global-box-shadow-lg);
+  /* border: 3px solid white; */
+}
+
+
+.c-projects__textbox {
+  display: flex;
+  width: calc(100% + 60px);
+  justify-content: center;
+  background-color: var(--global-color-neutral-x-light);
+  box-shadow: var(--global-box-shadow-lg);
+  position: relative;
+  left:-60px;
+  padding: var(--global-whitespace-lg);
+  line-height: 2;
+  font-size: 0.85rem;
+  margin-bottom: var(--global-whitespace-md);
+}
+
+.c-projects__textbox--inverse {
+  left: 0;
+}
+
+.c-projects__text {
+  margin:0;
+}
+
+.c-projects__tags {
+  display: flex;  
+  flex-wrap: wrap;
+  /* width: calc(100% + 100px); */
+  margin:0;
+}
+
+.c-projects__tag {
+  margin-right: var(--global-whitespace-lg);
+  font-weight: 600;
+}
+
+.c-projects__links {
+  display: flex;
+  align-items: center;
+  margin-top: var(--global-whitespace-xl);
+}
+.c-projects__links--right {
+  grid-column: 2 / 2;
+  justify-content: flex-end;
+}
+
+/*
+    Component: links
+*/
+
+.c-links {
+  --link-fill-color:var(--global-color-neutral-xxx-dark);
+  --link-stroke-color:black;
+}
+
+.c-links:hover {
+  --link-fill-color:var(--global-color-alpha);
+  --link-stroke-color:var(--global-color-alpha);
+}
+
+.c-links__svg {
+  margin-top: var(--global-whitespace-xxs);
+}
+
+.c-links__fill {
+  fill: var(--link-fill-color);
+}
+
+.c-links__stroke {
+
+  stroke: var(--link-stroke-color);
+}
+
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+/* Margin-bottom */
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: var(--global-whitespace-xxs) !important;
+}
+
+.u-mb-sm {
+  margin-bottom: var(--global-whitespace-xs) !important;
+}
+
+.u-mb-md {
+  margin-bottom: var(--global-whitespace-md) !important;
+}
+
+.u-mb-lg {
+  margin-bottom: var(--global-whitespace-xl) !important;
+}
+
+.u-mb-xl {
+  margin-bottom: var(--global-whitespace-xxl) !important;
+}
+
+/* Margin-top */
+
+.u-mt-clear {
+  margin-top: 0 !important;
+}
+
+.u-mt-xs {
+  margin-top: var(--global-whitespace-xxs) !important;
+}
+
+.u-mt-sm {
+  margin-top: var(--global-whitespace-xs) !important;
+}
+
+.u-mt-md {
+  margin-top: var(--global-whitespace-md) !important;
+}
+
+.u-mt-lg {
+  margin-top: var(--global-whitespace-xl) !important;
+}
+
+.u-mt-xl {
+  margin-top: var(--global-whitespace-xxl) !important;
+}
+
+
+/* Margin-left */
+
+.u-ml-lg {
+  padding-left: var(--global-whitespace-lg) !important;
+}
+
+/* Margin-left , Margin-right */
+
+.u-margin-lr-sm {
+  margin-left: var(--global-whitespace-sm);
+  margin-right: var(--global-whitespace-sm);
+}
+
+.u-margin-lr-md {
+  margin-left: var(--global-whitespace-md);
+  margin-right: var(--global-whitespace-md);
+}
+
+.u-margin-lr-lg {
+  margin-left: var(--global-whitespace-lg);
+  margin-right: var(--global-whitespace-lg);
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+  max-width: 27em !important;
+}
+
+.u-max-width-sm {
+  max-width: 32em !important;
+}
+
+.u-max-width-md {
+  max-width: 50em !important;
+}
+
+.u-max-width-lg {
+  max-width: 63.5em !important;
+}
+.u-max-width-xl {
+  max-width: 72em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+  text-align: center;
+}
+
+.u-align-center {
+  margin: 0 auto;
+}
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-grid-center {
+  justify-self: center;
+}
+
+.u-grid-left {
+  justify-self: left;
+}
+
+.u-grid-right {
+  justify-self: right;
+}
+
+/*
+    Utilities: margin lr
+    ---
+    Utility classes margin lr for components
+*/
+
+
+
+/*
+    Utilities: color
+    ---
+    Utility classes align text or components
+*/
+
+.u-grey {
+  color: var(--global-color-neutral-x-dark);
+}
+
+
+
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+  /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
