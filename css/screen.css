@@ -49,6 +49,8 @@
   /* Shadows */
   --global-box-shadow: 0 0 0 1px rgba(0,0,0,.025), 0 2px 6px rgba(0,0,0,.05);
   --global-box-shadow-lg: 0 0 0 1px rgba(0,0,0,.025), 0 2px 10px rgba(0,0,0,.1);
+  --global-box-shadow-img: 15px 15px 0px 0px var(--global-color-alpha-light); 
+  --global-box-shadow-img--inverse: -15px 15px 0px 0px var(--global-color-alpha-light);
   
 
   /* transitions */
@@ -520,6 +522,9 @@ input:disabled {
   width: 100%;
 }
 
+.c-about__content {
+  margin-top: var(--global-whitespace-xxl);
+}
 
 
 /*
@@ -786,12 +791,13 @@ input:disabled {
   width: 100%;
   overflow: hidden;
   max-height: 0;
-  transition: max-height .45s cubic-bezier(.44, .99, .48, 1);
+  transition: max-height 1s cubic-bezier(.44, .99, .48, 1);
 }
 
 
 .c-projects__checkbox:checked ~ .c-projects__hidden {
-  max-height: 800px;
+  max-height: 200vh;
+  overflow:visible;
 }
 
 
@@ -810,7 +816,7 @@ input:disabled {
 
 .c-projects__image {
   position: relative;
-  box-shadow: var(--global-box-shadow-lg);
+  box-shadow: inset var(--global-box-shadow-lg);
   /* border: 3px solid white; */
   --image-hidden:0;
   --image-main:1;
@@ -820,7 +826,10 @@ input:disabled {
 .c-projects__image:hover {
   --image-hidden:1;
   --image-main:0;
-  box-shadow: 10px 10px 0px 0px rgba(188,238,193,0.4);
+  box-shadow:  inset var(--global-box-shadow-lg), var(--global-box-shadow-img);
+}
+.c-project__image--inverse:hover {
+  box-shadow: inset var(--global-box-shadow-lg), var(--global-box-shadow-img--inverse);
 }
 
 .c-image {
@@ -923,11 +932,12 @@ input:disabled {
 }
 
 .c-links__fill {
+  transition: var(--global-transition-alpha);
   fill: var(--link-fill-color);
 }
 
 .c-links__stroke {
-
+  transition: var(--global-transition-alpha);
   stroke: var(--link-stroke-color);
 }
 
