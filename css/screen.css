@@ -164,6 +164,24 @@ h6 {
   margin: 0 0 var(--global-whitespace-md);
 }
 
+@media (max-width: 576px) {
+  h1 {
+    font-size: 3.5rem;
+    margin: 0 0 var(--global-whitespace-lg);
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 0 0 var(--global-whitespace-md);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin: 0 0 var(--global-whitespace-md);
+  }
+  
+}
+
 p,
 ol,
 ul,
@@ -301,6 +319,12 @@ input:disabled {
   width: 100%;
 }
 
+@media (max-width: 576px) {
+  .o-container {
+    padding: var(--global-whitespace-sm) var(--global-whitespace-md);
+  }
+}
+
 /*
     Objects: section
     ---
@@ -384,7 +408,6 @@ input:disabled {
   width: 100%;
   top: 0;
   transition: top var(--global-transition-alpha), box-shadow var(--global-transition-gamma);
-  
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -394,7 +417,6 @@ input:disabled {
   padding:  var(--global-whitespace-md) var(--global-whitespace-xxxl);
   z-index: 100;
 }
-
 
 .c-app__header {
   display: flex;
@@ -432,6 +454,31 @@ input:disabled {
   text-align: center;
 }
 
+.c-app__mobile-nav {
+  display: none;
+}
+
+
+@media (max-width: 576px) {
+  .c-app__topbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: var(--global-whitespace-sm) var(--global-whitespace-md);
+  }
+  .c-app__mobile-nav {
+    display: block;
+    
+  }
+  .c-app__nav-button {
+    float: right;
+  }
+  .c-app__nav {
+    grid-column: 1 / 3;
+    /* display: none; */
+  }
+}
+
 
 
 /*
@@ -467,6 +514,33 @@ input:disabled {
 .c-nav__link--last {
   margin-right:0;
 }
+
+@media (max-width: 576px) {
+
+  .c-nav__list {
+    display: block;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height var(--global-transition-beta);
+  }
+
+  .c-nav__item {
+    display: block;
+    text-align: center;
+    padding: var(--global-whitespace-md);
+  }  
+
+  .c-nav__item:not(:first-child)::before {
+    content: '';
+  }
+  
+  .c-nav__link {
+    margin: 0;
+  }
+}
+
+
 /*
     Component: button
 */
@@ -499,6 +573,7 @@ input:disabled {
   width: 100%;
   display: flex;
   align-items: flex-end;
+  flex-direction: row-reverse;
   justify-content: space-between;
 }
 .c-header__text {
@@ -508,7 +583,7 @@ input:disabled {
 .c-header__subtitle {
   color:var(--global-color-neutral-x-dark);
   font-weight: 400;
-  margin: 0 0 var(--global-whitespace-xxl);;
+  margin: 0 0 var(--global-whitespace-xxl);
 }
 
 .c-header__button {
@@ -517,6 +592,22 @@ input:disabled {
   box-shadow: var(--global-box-shadow-lg);
 }
 
+@media (max-width: 576px) {
+  .c-header {
+    display: block;
+  }
+  .c-header__text {
+    text-align: center;
+    padding:0;
+  }
+  .c-header__subtitle {
+    margin:0 0 var(--global-whitespace-md);
+  }
+}
+
+/*
+    Component: about 
+*/
 
 .c-about {
   width: 100%;
@@ -653,6 +744,12 @@ input:disabled {
   fill: var(--socials-color);
 }
 
+
+@media (max-width: 576px) {
+  .c-socials {
+    left: 0;
+  }
+}
 
 /*
     Component: next button

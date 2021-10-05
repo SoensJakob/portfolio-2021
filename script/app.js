@@ -2,6 +2,7 @@ var html_about;
 var html_next_button;
 var html_nav;
 var html_contentList;
+var html_nav_list;
 
 var global_pos = 1;
 
@@ -18,10 +19,6 @@ const resetButtons = function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log("Script Loaded!")
-
-    function scrollTo(hash) {
-        location.hash = "#" + hash;
-    }
 
     var html_test = document.querySelector(".js-test")
 
@@ -79,6 +76,22 @@ document.addEventListener('DOMContentLoaded', function () {
         resetButtons();
     } 
 
-    
+    // Create mobiel nav btn
+
+    html_nav_list = document.querySelector(".js-nav-list");
+    html_nav_btn = document.querySelector(".js-nav-btn");
+    var flf = 0
+
+    html_nav_btn.addEventListener("click", function() {
+        if (flf == 0) {
+            html_nav_list.style.height = "245px";
+            flf = 1;
+        }
+        else {
+            html_nav_list.style.height = "0";
+            flf = 0;
+        }
+        
+    });
 
 });
