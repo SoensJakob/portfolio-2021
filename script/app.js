@@ -8,7 +8,7 @@ var global_pos = 1;
 
 const resetButtons = function() {
     if(global_pos > html_contentList.length - 1 ) {
-        console.log(global_pos)
+        // console.log(global_pos)
         html_next_button.style.transform = "rotate(180deg)"
     }
     else {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     html_contentList = document.querySelectorAll(".o-container");
-    console.log(html_contentList)
+    // console.log(html_contentList)
 
     html_next_button = document.querySelector(".js-next")
 
@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
             
         } else {
             html_nav.style.top = "-125px";
+            html_nav_list.style.height = "0";
+            flf = 0;
             
         }
         if(window.pageYOffset > 0) {
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     html_nav_btn.addEventListener("click", function() {
         if (flf == 0) {
-            html_nav_list.style.height = "245px";
+            html_nav_list.style.height = "255px";
             flf = 1;
         }
         else {
