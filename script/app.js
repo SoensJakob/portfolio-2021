@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     html_test.addEventListener("click", function(){
         document.querySelector("#about").scrollIntoView({behavior:'smooth'})
-        console.log("scroll to item")
+        // console.log("scroll to item")
     });
 
     
 
     html_contentList = document.querySelectorAll(".o-container");
-    console.log(html_contentList)
+    // console.log(html_contentList)
 
     html_next_button = document.querySelector(".js-next")
 

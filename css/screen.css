@@ -447,7 +447,7 @@ input:disabled {
 }
 
 .c-app__contact {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -704,6 +704,8 @@ input:disabled {
 .c-content__image--link {
   box-shadow: 18px 18px 0px var(--global-color-alpha-light);
 }
+
+
 
 @media (max-width: 768px) {
   .c-content {
@@ -1199,6 +1201,15 @@ input:disabled {
 .c-links__stroke {
   transition: var(--global-transition-alpha);
   stroke: var(--link-stroke-color);
+}
+
+
+/*
+    Component: contact
+*/
+
+.c-contact__created {
+  text-align: center;
 }
 
 
