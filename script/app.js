@@ -30,12 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     html_contentList = document.querySelectorAll(".o-container");
-    // console.log(html_contentList)
+    console.log(html_contentList)
 
     html_next_button = document.querySelector(".js-next")
 
     html_next_button.addEventListener("click", function() {
         try {
+            // console.log(html_contentList[global_pos].id)
             x = "#" + html_contentList[global_pos].id
             document.querySelector(x).scrollIntoView({behavior:'smooth'})
             
