@@ -2,12 +2,13 @@ var html_about;
 var html_next_button;
 var html_nav;
 var html_contentList;
+var html_nav_list;
 
 var global_pos = 1;
 
 const resetButtons = function() {
     if(global_pos > html_contentList.length - 1 ) {
-        console.log(global_pos)
+        // console.log(global_pos)
         html_next_button.style.transform = "rotate(180deg)"
     }
     else {
@@ -19,10 +20,6 @@ const resetButtons = function() {
 document.addEventListener('DOMContentLoaded', function () {
     console.log("Script Loaded!")
 
-    function scrollTo(hash) {
-        location.hash = "#" + hash;
-    }
-
     var html_test = document.querySelector(".js-test")
 
     html_test.addEventListener("click", function(){
@@ -33,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     html_contentList = document.querySelectorAll(".o-container");
-    console.log(html_contentList)
+    // console.log(html_contentList)
 
     html_next_button = document.querySelector(".js-next")
 
@@ -66,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
             
         } else {
             html_nav.style.top = "-125px";
+            html_nav_list.style.height = "0";
+            flf = 0;
             
         }
         if(window.pageYOffset > 0) {
@@ -79,6 +78,22 @@ document.addEventListener('DOMContentLoaded', function () {
         resetButtons();
     } 
 
-    
+    // Create mobiel nav btn
+
+    html_nav_list = document.querySelector(".js-nav-list");
+    html_nav_btn = document.querySelector(".js-nav-btn");
+    var flf = 0
+
+    html_nav_btn.addEventListener("click", function() {
+        if (flf == 0) {
+            html_nav_list.style.height = "255px";
+            flf = 1;
+        }
+        else {
+            html_nav_list.style.height = "0";
+            flf = 0;
+        }
+        
+    });
 
 });
