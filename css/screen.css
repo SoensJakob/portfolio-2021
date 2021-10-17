@@ -888,6 +888,8 @@ input:disabled {
   position: fixed;
   bottom: 40px;
   right:0;
+  z-index: 100;
+
 }
 
 .c-email__link {  
