@@ -162,7 +162,9 @@
                 <div class="c-about__content ">
                     <div class="c-content">
                         <div class="c-content__image">
-                            <img class="c-content__image--link" src="assets/img/zelfportret-web-II.png" alt="self-portrait">
+                            
+                            <img class="c-content__image--item c-content__image--main" src="assets/img/zelfportret-web-II.png" alt="profile picture 2">
+                            <img class="c-content__image--item c-content__image--hidden" src="assets/img/zelfportret-web-III.jpg" alt="profile picture 3">
                         </div>
                         <div class="c-content__text">
 
@@ -200,7 +202,7 @@
                             </ul>
                         </div>
                         <div class="c-skills__extra">
-                            <h4 class="c-skills__title">Framework/libraries</h4>
+                            <h4 class="c-skills__title u-ml-none">Framework/libraries</h4>
                             <ul class="o-list c-skills__list">
                                 <li class="c-skills__item">
                                     SASS
@@ -251,7 +253,10 @@
                         <div class="c-experience__job u-grid-left">
                             <h2>Student <span class="u-grey">@ Howest Kortrijk</span> </h2>
                             <p>
-                                I'm currently studying Media & Creative Technologies and looking for an internship.
+                                During my studies I learned different techniques on how to develop websites and applications front- and backend but also, how to handle problems efficiently and individually. 
+                                <br>
+                                I just recently came back from Mexico 🇲🇽. Where I did an exchange at Tec de Monterrey for 5 months. In these 5 months I had classes in English and Spanish where I continued my progress in Computer Science.  I also traveled a big portion of Mexico, Guatemala and Belize during and after the semester!
+
                             </p>
                         </div>
                     
@@ -316,9 +321,74 @@
                     <h2 class="c-title__text" >Projects</h2>
                     <div class="c-line c-title__line c-line--md"></div>
                 </div>
+                <!-- Research Project -->
+                <div class="c-projects__content">
+                    <div class="c-projects__image">
+                        <!-- <div class="c-image c-image--overlay">test</div> -->
+                        <img class="c-image c-image--main" src="assets/img/research-project-1.png" alt="research-project-1 Image 1">
+                        <img class="c-image c-image--hidden" src="assets/img/research-project-2.png" alt="research-project-2 Image 2">
+                    </div>
+                    <div class="c-projects__main">
+                        <h3>Research Project: Wireframe to code</h3>
+                        <h4>
+                            Research project and bachelor thesis
+                        </h4>
+                        <div class="c-projects__textbox">
+                            
+                            <p class="c-projects__text">
+                                <i class="c-projects__text--italic">
+                                    "Object detection in Wireframes using a pre-trained Faster R-CNN 
+                                    ResNet-50 FPN and conversion to a website using HTML
+                                    (Wireframe to code)"
+                                </i>
+                                This is the subject of my Research Project and thesis. 
+                                I explored various solutions to this problem and made a prototype using Detecto library which uses a pretrained ResNet-50 FPN model as a base. 
+                                This model is then used for transfer learning on my own dataset which contains wireframe elements.
+                                With these results I made a system which converts the different elements with there location to html elements and with a prewritten css to give it style.
+                                The main goal of the project was to as accurately as possible convert the wireframe to a working prototype with all the positions of the elements intact. 
+                            </p>
+                        </div>
+                        <ul class="o-list c-projects__tags">
+                            <li class="c-projects__tag">
+                                RESEARCH
+                            </li>
+                            <li class="c-projects__tag">
+                                DEEP LEARNING
+                            </li>
+                            <li class="c-projects__tag">
+                                PYTHON
+                            </li>
+                            <li class="c-projects__tag">
+                                SELF-LEARNING
+                            </li>
+                            <li class="c-projects__tag">
+                                CNN
+                            </li>
+                            <li class="c-projects__tag">
+                                HTML
+                            </li>
+                            <li class="c-projects__tag">
+                                CSS
+                            </li>
+                            <li class="c-projects__tag">
+                                JAVASCRIPT
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c-projects__links">
+                                                
+                        <a href="https://github.com/SoensJakob/Research-Project" class="u-margin-lr-md c-links">
+                            <svg class="c-links__svg" xmlns="http://www.w3.org/2000/svg" width="19.47" height="21.292" viewBox="0 0 19.47 21.292">
+                                <path id="Path_19" class='c-links__stroke' data-name="Path 19" d="M147.18,410.155c0-.319-.012-1.164-.018-2.286-3.737.812-4.526-1.8-4.526-1.8a3.559,3.559,0,0,0-1.492-1.965c-1.22-.834.092-.817.092-.817a2.821,2.821,0,0,1,2.058,1.384,2.861,2.861,0,0,0,3.91,1.117,2.872,2.872,0,0,1,.853-1.8c-2.983-.339-6.12-1.491-6.12-6.64a5.194,5.194,0,0,1,1.383-3.605,4.827,4.827,0,0,1,.132-3.556s1.128-.361,3.694,1.377a12.741,12.741,0,0,1,6.727,0c2.565-1.739,3.691-1.377,3.691-1.377a4.828,4.828,0,0,1,.134,3.556,5.185,5.185,0,0,1,1.381,3.605c0,5.162-3.142,6.3-6.135,6.63a3.208,3.208,0,0,1,.912,2.489c0,1.8-.016,3.246-.016,3.686C153.841,410.514,147.18,410.511,147.18,410.155Z" transform="translate(-140.11 -389.631)" fill="#fff" stroke="#2e2e2e" stroke-width="1" fill-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <!-- <a href="working.html" class="c-button u-margin-lr-sm">More info</a> -->
+
+                    </div>
+                </div>
                     <!-- Project III -->
-                    <div class="c-projects__content">
-                        <div class="c-projects__image">
+                    <div class="c-projects__content c-project__content--inverse">
+                        <div class="c-projects__image c-project__image--inverse">
                             <!-- <div class="c-image c-image--overlay">test</div> -->
                             <img class="c-image c-image--main" src="assets/img/project-III-1.png" alt="Project-III Image 1">
                             <img class="c-image c-image--hidden" src="assets/img/project-III-2.png" alt="Project-III Image 2">
@@ -328,7 +398,7 @@
                             <h4>
                                 Group project for an external client
                             </h4>
-                            <div class="c-projects__textbox">
+                            <div class="c-projects__textbox c-projects__textbox--inverse">
                                 <p class="c-projects__text">
                                     Our external client was Jimber, IT security provider based in Oostkamp <br>
                                     Jimber wanted to see if it was possible to create an indoor tracking app using bluetooth
@@ -380,8 +450,8 @@
                         </div>
                     </div>
                     <!-- Interaction Design -->
-                    <div class="c-projects__content c-project__content--inverse">
-                        <div class="c-projects__image c-project__image--inverse">
+                    <div class="c-projects__content">
+                        <div class="c-projects__image">
                             
                             <img class="c-image c-image--main" src="assets/img/interaction-design-2.png" alt="Interaction-Design Image 1">
                             <img class="c-image c-image--hidden" src="assets/img/interaction-design-1.png" alt="Interaction-Design Image 2">
@@ -450,8 +520,8 @@
                     
                     <div class="c-projects__hidden">
                         <!-- Project II -->
-                        <div class="c-projects__content">
-                            <div class="c-projects__image">
+                        <div class="c-projects__content c-project__content--inverse">
+                            <div class="c-projects__image c-project__image--inverse">
                                 
                                 <img class="c-image c-image--main" src="assets/img/project-II-2.png" alt="Project-I Image 1">
                                 <img class="c-image c-image--hidden" src="assets/img/project-II-1.png" alt="Interaction-Design">
@@ -461,7 +531,7 @@
                                 <h4>
                                     Group project for Howest
                                 </h4>
-                                <div class="c-projects__textbox">
+                                <div class="c-projects__textbox c-projects__textbox--inverse">
                                     <p class="c-projects__text">
                                         For this project we worked as a team to recreate the game Twister.We wanted to make it more interesting so children would be encouraged to exercise more. <br>
                                         We recreated the Twister board with pressure sensors and LEDs <br>
@@ -521,8 +591,8 @@
                             </div>
                         </div>
                         <!-- DP -->
-                        <div class="c-projects__content c-project__content--inverse">
-                            <div class="c-projects__image c-project__image--inverse">
+                        <div class="c-projects__content">
+                            <div class="c-projects__image">
                                 <img src="assets/img/DP-1.png" alt="Device Programming-1">
                                 <img class="c-image c-image--hidden" src="assets/img/DP-2.png" alt="Device Programming-2">
                             </div>
@@ -572,8 +642,8 @@
                         </div>
     
                         <!-- APM -->
-                        <div class="c-projects__content">
-                            <div class="c-projects__image">
+                        <div class="c-projects__content c-project__content--inverse">
+                            <div class="c-projects__image c-project__image--inverse">
                                 <!-- <div class="c-image c-image--overlay">test</div> -->
                                 <img class="c-image c-image--main" src="assets/img/APM-1.png" alt="Advanced Programming & Math - 1">
                                 <img class="c-image c-image--hidden" src="assets/img/APM-2.png" alt="Advanced Programming & Math - 2">
@@ -583,7 +653,7 @@
                                 <h4>
                                     Implement the A star algorithm to create a maze solver
                                 </h4>
-                                <div class="c-projects__textbox">
+                                <div class="c-projects__textbox c-projects__textbox--inverse">
                                     <p class="c-projects__text">
                                         Create a maze solver using an A star Algorithm in Python <br>
                                         In this assignment it was the intention to experiment with the A* algorithm and to calculate the distance between 2 points <br>
@@ -604,7 +674,7 @@
     
                                 </ul>
                             </div>
-                            <div class="c-projects__links c-projects__links--right">
+                            <div class="c-projects__links">
                                 <a href="https://github.com/JimberIndustryProject" class="u-margin-lr-sm">
                                     <svg class="c-links__svg" xmlns="http://www.w3.org/2000/svg" width="19.47" height="21.292" viewBox="0 0 19.47 21.292">
                                         <path id="Path_19" data-name="Path 19" d="M147.18,410.155c0-.319-.012-1.164-.018-2.286-3.737.812-4.526-1.8-4.526-1.8a3.559,3.559,0,0,0-1.492-1.965c-1.22-.834.092-.817.092-.817a2.821,2.821,0,0,1,2.058,1.384,2.861,2.861,0,0,0,3.91,1.117,2.872,2.872,0,0,1,.853-1.8c-2.983-.339-6.12-1.491-6.12-6.64a5.194,5.194,0,0,1,1.383-3.605,4.827,4.827,0,0,1,.132-3.556s1.128-.361,3.694,1.377a12.741,12.741,0,0,1,6.727,0c2.565-1.739,3.691-1.377,3.691-1.377a4.828,4.828,0,0,1,.134,3.556,5.185,5.185,0,0,1,1.381,3.605c0,5.162-3.142,6.3-6.135,6.63a3.208,3.208,0,0,1,.912,2.489c0,1.8-.016,3.246-.016,3.686C153.841,410.514,147.18,410.511,147.18,410.155Z" transform="translate(-140.11 -389.631)" fill="#fff" stroke="#2e2e2e" stroke-width="1" fill-rule="evenodd"/>
@@ -623,8 +693,8 @@
                             </div>
                         </div>
                         <!-- Project I -->
-                        <div class="c-projects__content c-project__content--inverse">
-                            <div class="c-projects__image c-project__image--inverse">
+                        <div class="c-projects__content">
+                            <div class="c-projects__image">
                                 <img src="assets/img/project-I-1.png" alt="Project-I 1">
                                 <img class="c-image c-image--hidden" src="assets/img/project-I-2.png" alt="Project-I 2">
     
@@ -634,7 +704,7 @@
                                 <h4 class="u-ml-lg">
                                     Build an IoT device using a raspberry Pi & 3 sensors 
                                 </h4>
-                                <div class="c-projects__textbox c-projects__textbox--inverse">
+                                <div class="c-projects__textbox">
                                     <p class="c-projects__text">
                                         I built a device with an air quality, a humidity, a temperature and a dust sensor. <br>
                                         It measures all the air quality of the room and it saves the data in a database which can be accessed on a web app   <br>
@@ -663,7 +733,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="c-projects__links">
+                            <div class="c-projects__links  c-projects__links--right">
                                 <!-- <a href="working.html" class="c-button u-margin-lr-md">More info</a> -->
                                 <a href="#"  class="u-margin-lr-md c-links">
                                     <svg class="c-links__svg" id="export-document" xmlns="http://www.w3.org/2000/svg" width="20.265" height="20.264" viewBox="0 0 20.265 20.264">
